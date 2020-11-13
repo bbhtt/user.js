@@ -60,7 +60,7 @@ user_pref("svg.disabled", true);
 user_pref("mathml.disabled", true); // Disable mathml reduce attack surface
 
 user_pref("gfx.font_rendering.graphite.enabled", false); // https://bugzilla.mozilla.org/show_bug.cgi?id=1255731
-user_pref("font.system.whitelist", ""); // Expose only whitelisted font to counter fingerprinting, set to none
+// user_pref("font.system.whitelist", ""); // Expose only whitelisted font to counter fingerprinting, set to none; RFP does this via default so not needed.
 
 // Auto Update 
 
