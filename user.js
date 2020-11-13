@@ -49,7 +49,7 @@ user_pref("javascript.use_us_english_locale", true); // If privacy resist finger
 
 // Don't download icon fonts
 
-user_pref("browser.display.use_document_fonts", 0); 
+// user_pref("browser.display.use_document_fonts", 0);  // RFP does this by default so not needed
 // user_pref("gfx.downloadable_fonts.enabled", false); // Breaks Bitwarden tootips
 user_pref("gfx.downloadable_fonts.fallback_delay", -1);
 
@@ -99,7 +99,6 @@ user_pref("extensions.pocket.enabled", false);
  // Disable Screenshots
 
 user_pref("extensions.screenshots.disabled", true); 
-user_pref("extensions.screenshots.upload-disabled", true); 
 
  // Disable reader mode
  
