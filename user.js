@@ -344,6 +344,7 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("dom.allow_cut_copy", false);
 user_pref("dom.disable_beforeunload", true);
 user_pref("dom.vibrator.enabled", false);
+user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can access set local storage whne opened
 
 
 // Javascript
