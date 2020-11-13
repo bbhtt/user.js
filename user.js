@@ -382,6 +382,7 @@ user_pref("network.IDN_show_punycode", true);
 user_pref("pdfjs.disabled", false);
 user_pref("browser.display.use_system_colors", false);
 user_pref("permissions.delegation.enabled", false);
+user_pref("privacy.window.name.update.enabled", true); // https://bugzilla.mozilla.org/show_bug.cgi?id=444222
 
 // UI
 
