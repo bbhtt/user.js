@@ -153,7 +153,8 @@ user_pref("app.normandy.api_url", "");
 
 // Autofill  (Disables various autofills)
 
-user_pref("extensions.formautofill.addresses.enabled", false); 
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.available", false); 
 user_pref("extensions.formautofill.available", "off"); 
 user_pref("extensions.formautofill.creditCards.enabled", false); 
 user_pref("extensions.formautofill.heuristics.enabled", false); 
