@@ -1,3 +1,5 @@
+// Original Project: https://github.com/arkenfox/user.js
+
 // Minimum Firefox version supported is FF82-Linux
 
 // Disable about:config warning 
@@ -74,7 +76,6 @@ user_pref("browser.search.update", false); // Don't update search engines
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.autoUpdateDefault", false);
 user_pref("extensions.systemAddon.update.enabled", false); 
-
 user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
 user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
@@ -137,7 +138,7 @@ user_pref("network.connectivity-service.enabled", false);
 
 // Safe Browsing and Malware/Phishing
 
-user_pref("browser.safebrowsing.downloads.enabled", false); // Sends file name, hash, size to Google, turn off local 
+user_pref("browser.safebrowsing.downloads.enabled", false); // Sends file name, hash, size to Google, turn off local See  Google Safe Browsing APIv4
 user_pref("browser.safebrowsing.downloads.remote.enabled", false); // Sends file name, hash, size to Google, turn off remote
 user_pref("browser.safebrowsing.downloads.remote.url", "");
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
@@ -145,7 +146,7 @@ user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 user_pref("browser.safebrowsing.allowOverride", false); // Disable 'ignore this'
 
 
-// Mozilla Normandy (temporary studies, user surveys, hotfixes)
+// Mozilla Normandy (temporary studies, user surveys, hotfixes hence disabled)
 
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
@@ -373,7 +374,7 @@ user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
 user_pref("devtools.chrome.enabled", false);
 user_pref("devtools.debugger.remote-enabled", false); 
-user_pref("middlemouse.contentLoadURL", false); // I don't have a middle-mouse button
+user_pref("middlemouse.contentLoadURL", false); 
 user_pref("network.http.redirection-limit", 7);
 user_pref("permissions.default.shortcuts", 2);
 user_pref("permissions.manager.defaultsUrl", "");
