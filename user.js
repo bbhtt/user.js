@@ -432,7 +432,6 @@ user_pref("privacy.sanitize.timeSpan", 0);
 // First Party Isolation
 
 user_pref("privacy.firstparty.isolate", true);
-user_pref("privacy.partition.network_state", true);
 user_pref("privacy.resistFingerprinting", true);
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.letterboxing", true);
