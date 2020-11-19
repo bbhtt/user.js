@@ -2,6 +2,9 @@
 
 // Minimum Firefox version supported is FF82-Linux
 
+// (*1) Set the region code below
+// (*2) Choose geolocation to block per OS
+
 // Disable about:config warning 
 
 user_pref("general.warnOnAboutConfig", false);
@@ -21,7 +24,7 @@ user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.newtabpage.enabled", false); // Display a blank page on nw tab currently controlled by MAC
 user_pref("browser.newtab.preload", false); // Don't preload content of new tab while in background
 
-// Turn off pocket/snippets telemetry
+// Turn off pocket/snippets telemetry on New Tab page
 
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
@@ -31,18 +34,30 @@ user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket",
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.pinned", "");
 
 // Geolocation and Geo specific configs, always ask reduces fingerprinting
 
-user_pref("permissions.default.geo", 0); // Always ask; for lesser fingerprinting
+user_pref("permissions.default.geo", 2); // Block location access prompt
 user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); // Use Mozilla location services
 user_pref("geo.provider.network.logging.enabled", true);
-user_pref("geo.provider.use_gpsd", false); // Linux specific geo location
+user_pref("geo.provider.use_gpsd", false); // Linux specific geo location		   (*2)
+// user_pref("geo.provider.ms-windows-location", false); // Windows specific geo location  (*2)
+// user_pref("geo.provider.use_corelocation", false); // Mac specific geo location	   (*2)	
 user_pref("browser.search.geoSpecificDefaults", false); // Remove location specific search
 user_pref("browser.search.geoSpecificDefaults.url", ""); // Remove location specific search
 user_pref("browser.region.network.url", ""); 
 user_pref("browser.region.update.enabled", false); // Don't update browser region
-user_pref("browser.search.region", "US"); // Above must be set first, always to US
+user_pref("browser.search.region", "US"); // (*1)
 
 // Locale and Fonts
 
@@ -73,15 +88,15 @@ user_pref("browser.search.update", false); // Don't update search engines
 
  // Don't update extensions by default
  
-user_pref("extensions.update.enabled", false);
-user_pref("extensions.update.autoUpdateDefault", false);
+user_pref("extensions.update.enabled", false); // Don't auto check for extension updates
+user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions 
 user_pref("extensions.systemAddon.update.enabled", false); 
-user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata
+user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla 
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
 user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
 user_pref("extensions.getAddons.showPane", false); // Don't display recommended addons
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); // Don't display recommended addons
-user_pref("extensions.blocklist.enabled", true);
+user_pref("extensions.blocklist.enabled", true); // Mozilla maintaines a remote blocklist of malicious addons; setting to true prevents installing any
 user_pref("extensions.systemAddon.update.url", "");
 user_pref("browser.ping-centre.telemetry", false);
 user_pref("plugin.state.flash", 0);
@@ -108,33 +123,35 @@ user_pref("reader.parse-on-load.enabled", false);
 
 // Telemetry and Reporting (Disables various telemetry and reporting)
 
-user_pref("toolkit.telemetry.unified", false);
-user_pref("toolkit.telemetry.enabled", false); 
-user_pref("toolkit.telemetry.server", "data:,");
-user_pref("toolkit.telemetry.archive.enabled", false);
-user_pref("toolkit.telemetry.newProfilePing.enabled", false); 
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); 
-user_pref("toolkit.telemetry.updatePing.enabled", false); 
-user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.unified", false); // Master switch if set to true below are not used by FF
+user_pref("toolkit.telemetry.enabled", false); // Master switch if set to true below are not used by FF
+user_pref("toolkit.telemetry.server", "data:,"); // The server telemetry pings are sent to; set to blank
+user_pref("toolkit.telemetry.archive.enabled", false); // Allow pings to be archived locally
+user_pref("toolkit.telemetry.newProfilePing.enabled", false); // Don't send a new profile ping
+user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false); // // Don't send shutdown ping to Mozilla for first session
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); // Don't send shutdown ping to Mozilla from second session
+user_pref("toolkit.telemetry.updatePing.enabled", false); // Don't send a update ping
+user_pref("toolkit.telemetry.bhrPing.enabled", false); // Reports background hangs
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.coverage.opt-out", true); 
+user_pref("toolkit.telemetry.coverage.opt-out", true); // https://www.ghacks.net/2018/09/21/mozilla-wants-to-estimate-firefoxs-telemetry-off-population/
 user_pref("toolkit.coverage.opt-out", true); 
 user_pref("toolkit.coverage.endpoint.base", "");
-user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.healthreport.uploadEnabled", false); // Disable FF data reporting
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("app.shield.optoutstudies.enabled", false); // Opt-out of FF studies
 user_pref("browser.discovery.enabled", false);
-user_pref("breakpad.reportURL", "");
-user_pref("browser.tabs.crashReporting.sendReport", false);
-user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-user_pref("extensions.webcompat-reporter.enabled", false);
+user_pref("breakpad.reportURL", ""); // Disables crash reporting
+user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash reporting
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
+user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button 
+                                                           // https://github.com/webcompat/webcompat-reporter-extensions
 
 // Captive Portal detection https://www.eff.org/deeplinks/2017/08/how-captive-portals-interfere-wireless-security-and-privacy
 
 user_pref("captivedetect.canonicalURL", "");
 user_pref("network.captive-portal-service.enabled", false);
-user_pref("network.connectivity-service.enabled", false);
+user_pref("network.connectivity-service.enabled", false); // Disable network connectivity checks https://bugzilla.mozilla.org/1460537
 
 // Safe Browsing and Malware/Phishing
 
@@ -143,7 +160,7 @@ user_pref("browser.safebrowsing.downloads.remote.enabled", false); // Sends file
 user_pref("browser.safebrowsing.downloads.remote.url", "");
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-user_pref("browser.safebrowsing.allowOverride", false); // Disable 'ignore this'
+user_pref("browser.safebrowsing.allowOverride", false); // https://bugzilla.mozilla.org/1226490
 
 
 // Mozilla Normandy (temporary studies, user surveys, hotfixes hence disabled)
@@ -164,12 +181,12 @@ user_pref("signon.formlessCapture.enabled", false);
 
 // Network Prefetch
 
-user_pref("network.prefetch-next", false); // Turn off link prefetching
+user_pref("network.prefetch-next", false); // Turn off link prefetching https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 user_pref("network.dns.disablePrefetch", true); // Turn off DNS prefetching
 user_pref("network.dns.disablePrefetchFromHTTPS", true); // Turn off DNS prefetching for https
 user_pref("network.predictor.enabled", false); 
 user_pref("network.predictor.enable-prefetch", false); 
-user_pref("network.http.speculative-parallel-limit", 0);
+user_pref("network.http.speculative-parallel-limit", 0); // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
 
  // uBO blocks pings by default
 
@@ -179,8 +196,9 @@ user_pref("browser.send_pings.require_same_host", true);
 // Network
 
 user_pref("network.dns.disableIPv6", true); // IPv6 increases fingerprinting apart from security issues
-user_pref("network.http.altsvc.enabled", false);
-user_pref("network.http.altsvc.oe", false);
+user_pref("network.http.altsvc.enabled", false); // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
+user_pref("network.http.altsvc.oe", false); // See above
+user_pref("network.ftp.enabled", false); // By default set to fault https://winaero.com/firefox-drops-ftp-support/
 user_pref("network.proxy.socks_remote_dns", true); //proxy sever DNS lookup when using SOCKS
 user_pref("network.file.disable_unc_paths", true); 
 user_pref("network.gio.supported-protocols", ""); // Disable gio as a potential proxy bypass vector
@@ -221,7 +239,8 @@ user_pref("dom.security.https_only_mode.upgrade_local", true);
 
 // URL and Search Bar behaviour
 
-user_pref("keyword.enabled", false);
+user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; disable it
+				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
 user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("layout.css.visited_links_enabled", false);
@@ -328,6 +347,7 @@ user_pref("browser.link.open_newwindow.restriction", 0);
 user_pref("full-screen-api.enabled", false);
 user_pref("dom.disable_open_during_load", true);
 user_pref("dom.popup_allowed_events", "click dblclick");
+user_pref("browser.link.open_newwindow.restriction", 0); // Open links in Tabs instead of a new window
 
 // Web worker
 
