@@ -267,7 +267,7 @@ user_pref("browser.cache.memory.enable", false);
 user_pref("browser.cache.memory.capacity", 0);
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
 user_pref("media.memory_cache_max_size", 65536);
-user_pref("browser.cache.offline.enable", false);
+user_pref("browser.cache.offline.storage.enable", false); // Enforce no offline cache
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("browser.contentblocking.category", "custom");
 user_pref("network.cookie.thirdparty.sessionOnly", true);
