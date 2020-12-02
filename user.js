@@ -459,3 +459,4 @@ user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("browser.startup.blankWindow", false);
 user_pref("ui.prefersReducedMotion", 1); 
+user_pref("privacy.firstparty.isolate.use_site", true); // Experminetal https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
