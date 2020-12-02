@@ -235,7 +235,8 @@ user_pref("security.mixed_content.block_object_subrequest", true);
 
 user_pref("dom.security.https_only_mode", true); 
 user_pref("dom.security.https_only_mode_pbm", true); 
-user_pref("dom.security.https_only_mode.upgrade_local", true); 
+user_pref("dom.security.https_only_mode.upgrade_local", true); // HTTPS only for local resources
+user_pref("dom.security.https_only_mode_send_http_background_request", false); // Disable sending a http request after 3s timeout
 
 // URL and Search Bar behaviour
 
