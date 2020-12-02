@@ -219,6 +219,11 @@ user_pref("security.ssl.enable_ocsp_stapling", true);
 user_pref("security.OCSP.enabled", 1);
 user_pref("security.OCSP.require", true);
 
+ // https://blog.mozilla.org/security/2020/01/09/crlite-part-1-all-web-pki-revocations-compressed/
+
+user_pref("security.remote_settings.crlite_filters.enabled", true);
+user_pref("security.pki.crlite_mode", 2);
+
 // Certificate 
 
 user_pref("security.pki.sha1_enforcement_level", 1);
