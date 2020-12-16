@@ -116,10 +116,6 @@ user_pref("extensions.pocket.enabled", false);
 
 user_pref("extensions.screenshots.disabled", true); 
 
- // Disable reader mode
- 
-user_pref("reader.parse-on-load.enabled", false); 
-
 
 // Telemetry and Reporting (Disables various telemetry and reporting)
 
@@ -267,8 +263,8 @@ user_pref("security.password_lifetime", 5);
 
 // Cache, cookie and other storage 
 
-user_pref("browser.cache.disk.enable", false);
-user_pref("browser.cache.memory.enable", false);
+user_pref("browser.cache.disk.enable", false); // No disk cache
+user_pref("browser.cache.memory.enable", false); // No memory cache
 user_pref("browser.cache.memory.capacity", 0);
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
 user_pref("media.memory_cache_max_size", 65536);
@@ -464,4 +460,9 @@ user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("browser.startup.blankWindow", false);
 user_pref("ui.prefersReducedMotion", 1); 
-user_pref("privacy.firstparty.isolate.use_site", true); // Experminetal https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
+user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
+
+// Webrender
+
+user_pref("gfx.webrender.all", true); // Master switch
+user_pref("gfx.webrender.software", true); // Use CPU
