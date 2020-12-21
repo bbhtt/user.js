@@ -461,8 +461,3 @@ user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("browser.startup.blankWindow", false);
 user_pref("ui.prefersReducedMotion", 1); 
 user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
-
-// Webrender
-
-user_pref("gfx.webrender.all", true); // Master switch
-user_pref("gfx.webrender.software", true); // Use CPU
