@@ -245,7 +245,6 @@ user_pref("keyword.enabled", false); // Input in location bar automatically reso
 				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
 user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
-user_pref("layout.css.visited_links_enabled", false);
 user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
