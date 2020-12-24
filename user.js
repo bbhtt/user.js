@@ -3,7 +3,8 @@
 // Minimum Firefox version supported is FF82-Linux
 
 // (*1) Set the region code below
-// (*2) Choose geolocation to block per OS
+// (*2) Choose geolocation to block per OS, Linux is enabled by default
+// (*3) Enable WebRender
 
 // Disable about:config warning 
 
@@ -465,3 +466,9 @@ user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("browser.startup.blankWindow", false);
 user_pref("ui.prefersReducedMotion", 1);
 user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
+
+
+// (*3) Webrender
+
+// user_pref("gfx.webrender.all", true); // Master switch
+// user_pref("gfx.webrender.software", true); // Use CPU
