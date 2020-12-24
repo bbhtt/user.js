@@ -55,7 +55,7 @@ user_pref("geo.provider.use_gpsd", false); // Linux specific geo location		   (*
 // user_pref("geo.provider.use_corelocation", false); // Mac specific geo location	   (*2)	
 user_pref("browser.search.geoSpecificDefaults", false); // Remove location specific search
 user_pref("browser.search.geoSpecificDefaults.url", ""); // Remove location specific search
-user_pref("browser.region.network.url", ""); 
+user_pref("browser.region.network.url", "");
 user_pref("browser.region.update.enabled", false); // Don't update browser region
 user_pref("browser.search.region", "US"); // (*1)
 
@@ -67,12 +67,12 @@ user_pref("javascript.use_us_english_locale", true); // If privacy resist finger
 // Don't download icon fonts
 
 // user_pref("browser.display.use_document_fonts", 0);  // RFP does this by default so not needed
-// user_pref("gfx.downloadable_fonts.enabled", false); // Breaks Bitwarden tootips
+user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.fallback_delay", -1);
 
  // Disable SVG images may break sites like YT
 
-user_pref("gfx.font_rendering.opentype_svg.enabled", false); 
+user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 user_pref("svg.disabled", true);
 user_pref("mathml.disabled", true); // Disable mathml reduce attack surface
 
@@ -87,11 +87,11 @@ user_pref("browser.search.update", false); // Don't update search engines
 // Extensions,addons and plugins
 
  // Don't update extensions by default
- 
+
 user_pref("extensions.update.enabled", false); // Don't auto check for extension updates
-user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions 
-user_pref("extensions.systemAddon.update.enabled", false); 
-user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla 
+user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions
+user_pref("extensions.systemAddon.update.enabled", false);
+user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
 user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
 user_pref("extensions.getAddons.showPane", false); // Don't display recommended addons
@@ -103,18 +103,18 @@ user_pref("plugin.state.flash", 0);
 user_pref("media.gmp-provider.enabled", false);
 
  // Disable DRM/encrypted media extension
- 
+
 user_pref("media.gmp-widevinecdm.visible", false);
 user_pref("media.gmp-widevinecdm.enabled", false);
 user_pref("media.eme.enabled", false);
 
   // Disable Pockets
-  
+
 user_pref("extensions.pocket.enabled", false);
 
  // Disable Screenshots
 
-user_pref("extensions.screenshots.disabled", true); 
+user_pref("extensions.screenshots.disabled", true);
 
 
 // Telemetry and Reporting (Disables various telemetry and reporting)
@@ -130,7 +130,7 @@ user_pref("toolkit.telemetry.updatePing.enabled", false); // Don't send a update
 user_pref("toolkit.telemetry.bhrPing.enabled", false); // Reports background hangs
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 user_pref("toolkit.telemetry.coverage.opt-out", true); // https://www.ghacks.net/2018/09/21/mozilla-wants-to-estimate-firefoxs-telemetry-off-population/
-user_pref("toolkit.coverage.opt-out", true); 
+user_pref("toolkit.coverage.opt-out", true);
 user_pref("toolkit.coverage.endpoint.base", "");
 user_pref("datareporting.healthreport.uploadEnabled", false); // Disable FF data reporting
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
@@ -140,7 +140,7 @@ user_pref("breakpad.reportURL", ""); // Disables crash reporting
 user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash reporting
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
-user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button 
+user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button
                                                            // https://github.com/webcompat/webcompat-reporter-extensions
 
 // Captive Portal detection https://www.eff.org/deeplinks/2017/08/how-captive-portals-interfere-wireless-security-and-privacy
@@ -167,10 +167,10 @@ user_pref("app.normandy.api_url", "");
 // Autofill  (Disables various autofills)
 
 user_pref("extensions.formautofill.addresses.enabled", false);
-user_pref("extensions.formautofill.creditCards.available", false); 
-user_pref("extensions.formautofill.available", "off"); 
-user_pref("extensions.formautofill.creditCards.enabled", false); 
-user_pref("extensions.formautofill.heuristics.enabled", false); 
+user_pref("extensions.formautofill.creditCards.available", false);
+user_pref("extensions.formautofill.available", "off");
+user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("extensions.formautofill.heuristics.enabled", false);
 user_pref("signon.autofillForms", false);
 user_pref("browser.formfill.enable", false);
 user_pref("signon.formlessCapture.enabled", false);
@@ -180,14 +180,14 @@ user_pref("signon.formlessCapture.enabled", false);
 user_pref("network.prefetch-next", false); // Turn off link prefetching https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 user_pref("network.dns.disablePrefetch", true); // Turn off DNS prefetching
 user_pref("network.dns.disablePrefetchFromHTTPS", true); // Turn off DNS prefetching for https
-user_pref("network.predictor.enabled", false); 
-user_pref("network.predictor.enable-prefetch", false); 
+user_pref("network.predictor.enabled", false);
+user_pref("network.predictor.enable-prefetch", false);
 user_pref("network.http.speculative-parallel-limit", 0); // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
 
  // uBO blocks pings by default
 
-user_pref("browser.send_pings", false); 
-user_pref("browser.send_pings.require_same_host", true); 
+user_pref("browser.send_pings", false);
+user_pref("browser.send_pings.require_same_host", true);
 
 // Network
 
@@ -196,16 +196,16 @@ user_pref("network.http.altsvc.enabled", false); // https://developer.mozilla.or
 user_pref("network.http.altsvc.oe", false); // See above
 user_pref("network.ftp.enabled", false); // By default set to fault https://winaero.com/firefox-drops-ftp-support/
 user_pref("network.proxy.socks_remote_dns", true); //proxy sever DNS lookup when using SOCKS
-user_pref("network.file.disable_unc_paths", true); 
+user_pref("network.file.disable_unc_paths", true);
 user_pref("network.gio.supported-protocols", ""); // Disable gio as a potential proxy bypass vector
-user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials 
+user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials
                                                           //dialogs
 
 // SSL/TLS deviations from defaults can be used in server side fingerprinting
 
 user_pref("security.ssl.require_safe_negotiation", true);
 user_pref("security.tls.version.enable-deprecated", false);
-user_pref("security.ssl.disable_session_identifiers", true); 
+user_pref("security.ssl.disable_session_identifiers", true);
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.url", "");
@@ -234,8 +234,8 @@ user_pref("security.mixed_content.block_object_subrequest", true);
 
 // HTTPS only mode
 
-user_pref("dom.security.https_only_mode", true); 
-user_pref("dom.security.https_only_mode_pbm", true); 
+user_pref("dom.security.https_only_mode", true);
+user_pref("dom.security.https_only_mode_pbm", true);
 user_pref("dom.security.https_only_mode.upgrade_local", true); // HTTPS only for local resources
 user_pref("dom.security.https_only_mode_send_http_background_request", false); // Disable sending a http request after 3s timeout
 
@@ -253,7 +253,7 @@ user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.bookmark", false);
 user_pref("browser.urlbar.suggest.openpage", false);
-user_pref("browser.urlbar.suggest.topsites", false); 
+user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("places.history.enabled", false);
 
 // Primary password policy
@@ -272,7 +272,7 @@ user_pref("browser.cache.offline.storage.enable", false); // Enforce no offline 
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("browser.contentblocking.category", "custom");
 user_pref("network.cookie.thirdparty.sessionOnly", true);
-user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true); 
+user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true);
 user_pref("dom.caches.enabled", false);
 user_pref("dom.storageManager.enabled", false);
 user_pref("dom.storage_access.enabled", false);
@@ -301,14 +301,14 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_aes_256_sha", false);
-user_pref("security.ssl3.rsa_aes_128_sha", false); 
+user_pref("security.ssl3.rsa_aes_128_sha", false);
 user_pref("security.ssl3.rsa_aes_256_sha", false);
 
 
 // Header/Referer
 
  // Currently controled by Chameleon
- 
+
 // DNT
 
 user_pref("privacy.donottrackheader.enabled", true);
@@ -344,7 +344,7 @@ user_pref("media.autoplay.blocking_policy", 2);
 // Window or NewTab
 
 user_pref("dom.disable_window_move_resize", true);
-user_pref("browser.link.open_newwindow", 3); 
+user_pref("browser.link.open_newwindow", 3);
 user_pref("browser.link.open_newwindow.restriction", 0);
 user_pref("full-screen-api.enabled", false);
 user_pref("dom.disable_open_during_load", true);
@@ -383,7 +383,7 @@ user_pref("media.navigator.enabled", false);
 user_pref("layers.acceleration.disabled", true);
 user_pref("dom.webaudio.enabled", false);
 user_pref("media.media-capabilities.enabled", false);
-user_pref("dom.vr.enabled", false); // Disable VR 
+user_pref("dom.vr.enabled", false); // Disable VR
 user_pref("permissions.default.xr", 2); // VR permissions set to block
 
 // Misc
@@ -391,12 +391,12 @@ user_pref("permissions.default.xr", 2); // VR permissions set to block
 user_pref("accessibility.force_disabled", 1); // Disable accesibility settings
 user_pref("beacon.enabled", false);
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
-user_pref("browser.pagethumbnails.capturing_disabled", true); 
+user_pref("browser.pagethumbnails.capturing_disabled", true);
 user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
 user_pref("devtools.chrome.enabled", false);
-user_pref("devtools.debugger.remote-enabled", false); 
-user_pref("middlemouse.contentLoadURL", false); 
+user_pref("devtools.debugger.remote-enabled", false);
+user_pref("middlemouse.contentLoadURL", false);
 user_pref("network.http.redirection-limit", 7);
 user_pref("permissions.default.shortcuts", 2);
 user_pref("permissions.manager.defaultsUrl", "");
@@ -425,8 +425,8 @@ user_pref("browser.download.forbid_open_with", true); // No 'open with' checkbox
 
 // Security
 
-user_pref("security.csp.enable", true); 
-user_pref("security.dialog_enable_delay", 700);
+user_pref("security.csp.enable", true);
+user_pref("security.dialog_enable_delay", 700); // Delay to allow clicking save,open; in ms prevents race conditions
 
 // Shutdown Behaviour
 
@@ -434,19 +434,19 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.clearOnShutdown.cache", true);
 user_pref("privacy.clearOnShutdown.cookies", true);
 user_pref("privacy.clearOnShutdown.downloads", true);
-user_pref("privacy.clearOnShutdown.formdata", true); 
-user_pref("privacy.clearOnShutdown.history", true); 
-user_pref("privacy.clearOnShutdown.offlineApps", true); 
-user_pref("privacy.clearOnShutdown.sessions", true); 
+user_pref("privacy.clearOnShutdown.formdata", true);
+user_pref("privacy.clearOnShutdown.history", true);
+user_pref("privacy.clearOnShutdown.offlineApps", true);
+user_pref("privacy.clearOnShutdown.sessions", true);
 user_pref("privacy.clearOnShutdown.siteSettings", false);
 user_pref("privacy.cpd.cache", true);
 user_pref("privacy.cpd.cookies", true);
-user_pref("privacy.cpd.formdata", true); 
-user_pref("privacy.cpd.history", true); 
-user_pref("privacy.cpd.offlineApps", true); 
-user_pref("privacy.cpd.passwords", false); 
-user_pref("privacy.cpd.sessions", true); 
-user_pref("privacy.cpd.siteSettings", false); 
+user_pref("privacy.cpd.formdata", true);
+user_pref("privacy.cpd.history", true);
+user_pref("privacy.cpd.offlineApps", true);
+user_pref("privacy.cpd.passwords", false);
+user_pref("privacy.cpd.sessions", true);
+user_pref("privacy.cpd.siteSettings", false);
 user_pref("privacy.clearOnShutdown.openWindows", true);
 user_pref("privacy.cpd.openWindows", true);
 user_pref("privacy.sanitize.timeSpan", 0);
@@ -459,5 +459,5 @@ user_pref("privacy.resistFingerprinting", true);
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("browser.startup.blankWindow", false);
-user_pref("ui.prefersReducedMotion", 1); 
+user_pref("ui.prefersReducedMotion", 1);
 user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
