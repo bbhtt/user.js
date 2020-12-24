@@ -239,7 +239,7 @@ user_pref("dom.security.https_only_mode_pbm", true);
 user_pref("dom.security.https_only_mode.upgrade_local", true); // HTTPS only for local resources
 user_pref("dom.security.https_only_mode_send_http_background_request", false); // Disable sending a http request after 3s timeout
 
-// URL and Search Bar behaviour
+// URL and Search bar  behaviour
 
 user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; disable it
 				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
@@ -255,6 +255,7 @@ user_pref("browser.urlbar.suggest.bookmark", false);
 user_pref("browser.urlbar.suggest.openpage", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("places.history.enabled", false);
+user_pref("browser.urlbar.suggest.engines", false); // Disable tab-to-search
 
 // Primary password policy
 
