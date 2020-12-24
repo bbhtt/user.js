@@ -4,166 +4,9 @@
 
 // (*1) Set the region code below
 // (*2) Choose geolocation to block per OS, Linux is enabled by default
-// (*3) Enable WebRender
-
-// Disable about:config warning 
-
-user_pref("general.warnOnAboutConfig", false);
-user_pref("browser.aboutConfig.showWarning", false);
-
-// Check for default browser
-
-// user_pref("browser.shell.checkDefaultBrowser", true);
-
-// Startup page, 0 is blank 
-
-user_pref("browser.startup.page", 0);
-user_pref("browser.startup.homepage", "about:blank");
-
-// Newtab page activity, loading content from remote locations 
-
-user_pref("browser.newtabpage.enabled", false); // Display a blank page on nw tab currently controlled by MAC
-user_pref("browser.newtab.preload", false); // Don't preload content of new tab while in background
-
-// Turn off pocket/snippets telemetry on New Tab page
-
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
-user_pref("browser.newtabpage.activity-stream.showSponsored", false);
-user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
-user_pref("browser.newtabpage.activity-stream.default.sites", "");
-user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
-user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
-user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
-user_pref("browser.newtabpage.activity-stream.showSearch", false);
-user_pref("browser.newtabpage.pinned", "");
-
-// Geolocation and Geo specific configs, always ask reduces fingerprinting
-
-user_pref("permissions.default.geo", 2); // Block location access prompt
-user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); // Use Mozilla location services
-user_pref("geo.provider.network.logging.enabled", true);
-user_pref("geo.provider.use_gpsd", false); // Linux specific geo location		   (*2)
-// user_pref("geo.provider.ms-windows-location", false); // Windows specific geo location  (*2)
-// user_pref("geo.provider.use_corelocation", false); // Mac specific geo location	   (*2)	
-user_pref("browser.search.geoSpecificDefaults", false); // Remove location specific search
-user_pref("browser.search.geoSpecificDefaults.url", ""); // Remove location specific search
-user_pref("browser.region.network.url", "");
-user_pref("browser.region.update.enabled", false); // Don't update browser region
-user_pref("browser.search.region", "US"); // (*1)
-
-// Locale and Fonts
-
-user_pref("intl.accept_languages", "en-US, en"); // Default value
-user_pref("javascript.use_us_english_locale", true); // If privacy resist fingerprint is set this is default
-
-// Don't download icon fonts
-
-// user_pref("browser.display.use_document_fonts", 0);  // RFP does this by default so not needed
-user_pref("gfx.downloadable_fonts.enabled", false);
-user_pref("gfx.downloadable_fonts.fallback_delay", -1);
-
- // Disable SVG images may break sites like YT
-
-user_pref("gfx.font_rendering.opentype_svg.enabled", false);
-user_pref("svg.disabled", true);
-user_pref("mathml.disabled", true); // Disable mathml reduce attack surface
-
-user_pref("gfx.font_rendering.graphite.enabled", false); // https://bugzilla.mozilla.org/show_bug.cgi?id=1255731
-// user_pref("font.system.whitelist", ""); // Expose only whitelisted font to counter fingerprinting, set to none; RFP does this via default so not needed.
-
-// Auto Update 
-
-user_pref("app.update.auto", false);
-user_pref("browser.search.update", false); // Don't update search engines
-
-// Extensions,addons and plugins
-
- // Don't update extensions by default
-
-user_pref("extensions.update.enabled", false); // Don't auto check for extension updates
-user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions
-user_pref("extensions.systemAddon.update.enabled", false);
-user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla
-user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
-user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
-user_pref("extensions.getAddons.showPane", false); // Don't display recommended addons
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); // Don't display recommended addons
-user_pref("extensions.blocklist.enabled", true); // Mozilla maintaines a remote blocklist of malicious addons; setting to true prevents installing any
-user_pref("extensions.systemAddon.update.url", "");
-user_pref("browser.ping-centre.telemetry", false);
-user_pref("plugin.state.flash", 0);
-user_pref("media.gmp-provider.enabled", false);
-
- // Disable DRM/encrypted media extension
-
-user_pref("media.gmp-widevinecdm.visible", false);
-user_pref("media.gmp-widevinecdm.enabled", false);
-user_pref("media.eme.enabled", false);
-
-  // Disable Pockets
-
-user_pref("extensions.pocket.enabled", false);
-
- // Disable Screenshots
-
-user_pref("extensions.screenshots.disabled", true);
-
-
-// Telemetry and Reporting (Disables various telemetry and reporting)
-
-user_pref("toolkit.telemetry.unified", false); // Master switch if set to true below are not used by FF
-user_pref("toolkit.telemetry.enabled", false); // Master switch if set to true below are not used by FF
-user_pref("toolkit.telemetry.server", "data:,"); // The server telemetry pings are sent to; set to blank
-user_pref("toolkit.telemetry.archive.enabled", false); // Allow pings to be archived locally
-user_pref("toolkit.telemetry.newProfilePing.enabled", false); // Don't send a new profile ping
-user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false); // // Don't send shutdown ping to Mozilla for first session
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); // Don't send shutdown ping to Mozilla from second session
-user_pref("toolkit.telemetry.updatePing.enabled", false); // Don't send a update ping
-user_pref("toolkit.telemetry.bhrPing.enabled", false); // Reports background hangs
-user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.coverage.opt-out", true); // https://www.ghacks.net/2018/09/21/mozilla-wants-to-estimate-firefoxs-telemetry-off-population/
-user_pref("toolkit.coverage.opt-out", true);
-user_pref("toolkit.coverage.endpoint.base", "");
-user_pref("datareporting.healthreport.uploadEnabled", false); // Disable FF data reporting
-user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("app.shield.optoutstudies.enabled", false); // Opt-out of FF studies
-user_pref("browser.discovery.enabled", false);
-user_pref("breakpad.reportURL", ""); // Disables crash reporting
-user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash reporting
-user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
-user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button
-                                                           // https://github.com/webcompat/webcompat-reporter-extensions
-
-// Captive Portal detection https://www.eff.org/deeplinks/2017/08/how-captive-portals-interfere-wireless-security-and-privacy
-
-user_pref("captivedetect.canonicalURL", "");
-user_pref("network.captive-portal-service.enabled", false);
-user_pref("network.connectivity-service.enabled", false); // Disable network connectivity checks https://bugzilla.mozilla.org/1460537
-
-// Safe Browsing and Malware/Phishing
-
-user_pref("browser.safebrowsing.downloads.enabled", false); // Sends file name, hash, size to Google, turn off local See  Google Safe Browsing APIv4
-user_pref("browser.safebrowsing.downloads.remote.enabled", false); // Sends file name, hash, size to Google, turn off remote
-user_pref("browser.safebrowsing.downloads.remote.url", "");
-user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
-user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-user_pref("browser.safebrowsing.allowOverride", false); // https://bugzilla.mozilla.org/1226490
-
-
-// Mozilla Normandy (temporary studies, user surveys, hotfixes hence disabled)
-
-user_pref("app.normandy.enabled", false);
-user_pref("app.normandy.api_url", "");
+// (*3) Set check for default browser
+// (*4) Use Chameleon extension in conjunction
+// (*5) Enable WebRender
 
 // Autofill  (Disables various autofills)
 
@@ -177,91 +20,10 @@ user_pref("browser.formfill.enable", false);
 user_pref("signon.formlessCapture.enabled", false);
 user_pref("signon.rememberSignons", false); // Toggle to remember sign-on
 
-// Network Prefetch
+// Auto Update 
 
-user_pref("network.prefetch-next", false); // Turn off link prefetching https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
-user_pref("network.dns.disablePrefetch", true); // Turn off DNS prefetching
-user_pref("network.dns.disablePrefetchFromHTTPS", true); // Turn off DNS prefetching for https
-user_pref("network.predictor.enabled", false);
-user_pref("network.predictor.enable-prefetch", false);
-user_pref("network.http.speculative-parallel-limit", 0); // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
-
- // uBO blocks pings by default
-
-user_pref("browser.send_pings", false);
-user_pref("browser.send_pings.require_same_host", true);
-
-// Network
-
-user_pref("network.dns.disableIPv6", true); // IPv6 increases fingerprinting apart from security issues
-user_pref("network.http.altsvc.enabled", false); // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
-user_pref("network.http.altsvc.oe", false); // See above
-user_pref("network.ftp.enabled", false); // By default set to fault https://winaero.com/firefox-drops-ftp-support/
-user_pref("network.proxy.socks_remote_dns", true); //proxy sever DNS lookup when using SOCKS
-user_pref("network.file.disable_unc_paths", true);
-user_pref("network.gio.supported-protocols", ""); // Disable gio as a potential proxy bypass vector
-user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials
-                                                          //dialogs
-
-// SSL/TLS deviations from defaults can be used in server side fingerprinting
-
-user_pref("security.ssl.require_safe_negotiation", true);
-user_pref("security.tls.version.enable-deprecated", false);
-user_pref("security.ssl.disable_session_identifiers", true);
-user_pref("security.ssl.errorReporting.automatic", false);
-user_pref("security.ssl.errorReporting.enabled", false);
-user_pref("security.ssl.errorReporting.url", "");
-user_pref("security.tls.enable_0rtt_data", false);
-user_pref("security.ssl.enable_false_start", false);
-user_pref("security.ssl.enable_ocsp_stapling", true);
-user_pref("security.OCSP.enabled", 1);
-user_pref("security.OCSP.require", true);
-
- // https://blog.mozilla.org/security/2020/01/09/crlite-part-1-all-web-pki-revocations-compressed/
-
-user_pref("security.remote_settings.crlite_filters.enabled", true);
-user_pref("security.pki.crlite_mode", 2);
-
-// Certificate 
-
-user_pref("security.pki.sha1_enforcement_level", 1);
-user_pref("security.cert_pinning.enforcement_level", 2);
-
-
-// Mixed Content
-
-user_pref("security.mixed_content.block_active_content", true);
-user_pref("security.mixed_content.block_display_content", true);
-user_pref("security.mixed_content.block_object_subrequest", true);
-
-// HTTPS only mode
-
-user_pref("dom.security.https_only_mode", true);
-user_pref("dom.security.https_only_mode_pbm", true);
-user_pref("dom.security.https_only_mode.upgrade_local", true); // HTTPS only for local resources
-user_pref("dom.security.https_only_mode_send_http_background_request", false); // Disable sending a http request after 3s timeout
-
-// URL and Search bar  behaviour
-
-user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; disable it
-				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
-user_pref("browser.fixup.alternate.enabled", false);
-user_pref("browser.urlbar.trimURLs", false);
-user_pref("browser.search.suggest.enabled", false);
-user_pref("browser.urlbar.suggest.searches", false);
-user_pref("browser.urlbar.speculativeConnect.enabled", false);
-user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-user_pref("browser.urlbar.suggest.history", false);
-user_pref("browser.urlbar.suggest.bookmark", false);
-user_pref("browser.urlbar.suggest.openpage", false);
-user_pref("browser.urlbar.suggest.topsites", false);
-user_pref("places.history.enabled", false);
-user_pref("browser.urlbar.suggest.engines", false); // Disable tab-to-search
-
-// Primary password policy
-
-user_pref("security.ask_for_password", 2);
-user_pref("security.password_lifetime", 5);
+user_pref("app.update.auto", false);
+user_pref("browser.search.update", false); // Don't update search engines
 
 // Cache, cookie and other storage 
 
@@ -279,20 +41,20 @@ user_pref("dom.caches.enabled", false);
 user_pref("dom.storageManager.enabled", false);
 user_pref("dom.storage_access.enabled", false);
 
-// Session Restore
+// Captive Portal detection https://www.eff.org/deeplinks/2017/08/how-captive-portals-interfere-wireless-security-and-privacy
 
-user_pref("browser.sessionstore.max_tabs_undo", 0);
-user_pref("browser.sessionstore.privacy_level", 2);
-user_pref("browser.sessionstore.resume_from_crash", false);
-user_pref("browser.sessionstore.interval", 30000);
-user_pref("toolkit.winRegisterApplicationRestart", false);
+user_pref("captivedetect.canonicalURL", "");
+user_pref("network.captive-portal-service.enabled", false);
+user_pref("network.connectivity-service.enabled", false); // Disable network connectivity checks https://bugzilla.mozilla.org/1460537
 
-// Favicon
+// Certificate 
 
-user_pref("browser.shell.shortcutFavicons", false);
-user_pref("browser.chrome.site_icons", false);
-user_pref("alerts.showFavicons", false);
+user_pref("security.pki.sha1_enforcement_level", 1);
+user_pref("security.cert_pinning.enforcement_level", 2);
 
+// (*3) Check for default browser 
+
+// user_pref("browser.shell.checkDefaultBrowser", true);
 
 // Ciphers 
 
@@ -306,24 +68,109 @@ user_pref("security.ssl3.ecdhe_rsa_aes_256_sha", false);
 user_pref("security.ssl3.rsa_aes_128_sha", false);
 user_pref("security.ssl3.rsa_aes_256_sha", false);
 
-
-// Header/Referer
-
- // Currently controled by Chameleon
-
-// DNT
-
-user_pref("privacy.donottrackheader.enabled", true);
-
-// Tor
-
-user_pref("network.http.referer.hideOnionSource", true);
-
 // Conatiner Mozilla MAC
 
 user_pref("privacy.userContext.ui.enabled", true);
 user_pref("privacy.userContext.enabled", true);
 user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
+
+// Disable about:config warning 
+
+user_pref("general.warnOnAboutConfig", false);
+user_pref("browser.aboutConfig.showWarning", false);
+
+// Disable DRM/encrypted media extension
+
+user_pref("media.gmp-widevinecdm.visible", false);
+user_pref("media.gmp-widevinecdm.enabled", false);
+user_pref("media.eme.enabled", false);
+
+// Disable SVG images may break sites like YT
+
+user_pref("gfx.font_rendering.opentype_svg.enabled", false);
+user_pref("svg.disabled", true);
+user_pref("mathml.disabled", true); // Disable mathml reduce attack surface
+user_pref("gfx.font_rendering.graphite.enabled", false); // https://bugzilla.mozilla.org/show_bug.cgi?id=1255731
+
+// Don't download icon fonts
+
+user_pref("gfx.downloadable_fonts.enabled", false);
+user_pref("gfx.downloadable_fonts.fallback_delay", -1);
+
+// Disable Pockets
+
+user_pref("extensions.pocket.enabled", false);
+
+// Disable Screenshots
+
+user_pref("extensions.screenshots.disabled", true);
+
+// DNT
+
+user_pref("privacy.donottrackheader.enabled", true);
+
+// DOM
+
+user_pref("dom.event.contextmenu.enabled", false);
+user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("dom.allow_cut_copy", false);
+user_pref("dom.disable_beforeunload", true);
+user_pref("dom.vibrator.enabled", false);
+user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can access set local storage whne opened
+
+// Downloads
+
+user_pref("browser.download.folderList", 2);
+user_pref("browser.download.useDownloadDir", false); // Ask where to save files
+user_pref("browser.download.manager.addToRecentDocs", false); // Don't add to recently opened files
+user_pref("browser.download.hide_plugins_without_extensions", false);
+user_pref("browser.download.forbid_open_with", true); // No 'open with' checkbox
+
+// Extensions,addons and plugins
+
+user_pref("extensions.update.enabled", false); // Don't auto check for extension updates
+user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions
+user_pref("extensions.systemAddon.update.enabled", false);
+user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla
+user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
+user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
+user_pref("extensions.getAddons.showPane", false); // Don't display recommended addons
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); // Don't display recommended addons
+user_pref("extensions.blocklist.enabled", true); // Mozilla maintaines a remote blocklist of malicious addons; setting to true prevents installing any
+user_pref("extensions.systemAddon.update.url", "");
+user_pref("browser.ping-centre.telemetry", false);
+user_pref("plugin.state.flash", 0);
+user_pref("media.gmp-provider.enabled", false);
+
+// Favicon
+
+user_pref("browser.shell.shortcutFavicons", false);
+user_pref("browser.chrome.site_icons", false);
+user_pref("alerts.showFavicons", false);
+
+// First Party Isolation
+
+user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
+user_pref("privacy.resistFingerprinting.letterboxing", true);
+user_pref("browser.startup.blankWindow", false);
+user_pref("ui.prefersReducedMotion", 1);
+user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
+
+// Geolocation and Geo specific configs, always ask reduces fingerprinting
+
+user_pref("permissions.default.geo", 2); // Block location access prompt
+user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); // Use Mozilla location services
+user_pref("geo.provider.network.logging.enabled", true);
+user_pref("geo.provider.use_gpsd", false); // Linux specific geo location		   (*2)
+// user_pref("geo.provider.ms-windows-location", false); // Windows specific geo location  (*2)
+// user_pref("geo.provider.use_corelocation", false); // Mac specific geo location	   (*2)	
+user_pref("browser.search.geoSpecificDefaults", false); // Remove location specific search
+user_pref("browser.search.geoSpecificDefaults.url", ""); // Remove location specific search
+user_pref("browser.region.network.url", "");
+user_pref("browser.region.update.enabled", false); // Don't update browser region
+user_pref("browser.search.region", "US"); // (*1)
 
 // GPU, camera, media, mic
 
@@ -345,41 +192,6 @@ user_pref("media.autoplay.blocking_policy", 2);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false); // Toggle for PiP mode
 user_pref("media.hardwaremediakeys.enabled", false); // Toggle for hardware media controls
 
-// Window or NewTab
-
-user_pref("dom.disable_window_move_resize", true);
-user_pref("browser.link.open_newwindow", 3);
-user_pref("browser.link.open_newwindow.restriction", 0);
-user_pref("full-screen-api.enabled", false);
-user_pref("dom.disable_open_during_load", true);
-user_pref("dom.popup_allowed_events", "click dblclick");
-user_pref("browser.link.open_newwindow.restriction", 0); // Open links in Tabs instead of a new window
-
-// Web worker
-
-user_pref("dom.serviceWorkers.enabled", false);
-user_pref("dom.webnotifications.enabled", false);
-user_pref("dom.webnotifications.serviceworker.enabled", false);
-user_pref("dom.push.enabled", false);
-user_pref("dom.push.userAgentID", "");
-
-// DOM
-
-user_pref("dom.event.contextmenu.enabled", false);
-user_pref("dom.event.clipboardevents.enabled", false);
-user_pref("dom.allow_cut_copy", false);
-user_pref("dom.disable_beforeunload", true);
-user_pref("dom.vibrator.enabled", false);
-user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can access set local storage whne opened
-
-
-// Javascript
-
-user_pref("javascript.options.asmjs", false);
-user_pref("javascript.options.wasm", false);
-user_pref("dom.targetBlankNoOpener.enabled", true);
-
-
 // Hardware Fingerprinting
 
 user_pref("dom.battery.enabled", false); // Disable Battery API
@@ -389,6 +201,33 @@ user_pref("dom.webaudio.enabled", false);
 user_pref("media.media-capabilities.enabled", false);
 user_pref("dom.vr.enabled", false); // Disable VR
 user_pref("permissions.default.xr", 2); // VR permissions set to block
+
+// Header/Referer
+
+ (*4) // Currently controled by Chameleon
+
+// HTTPS only mode
+
+user_pref("dom.security.https_only_mode", true);
+user_pref("dom.security.https_only_mode_pbm", true);
+user_pref("dom.security.https_only_mode.upgrade_local", true); // HTTPS only for local resources
+user_pref("dom.security.https_only_mode_send_http_background_request", false); // Disable sending a http request after 3s timeout
+
+// Javascript
+
+user_pref("javascript.options.asmjs", false);
+user_pref("javascript.options.wasm", false);
+user_pref("dom.targetBlankNoOpener.enabled", true);
+
+// Locale and Fonts
+
+user_pref("intl.accept_languages", "en-US, en"); // Default value
+user_pref("javascript.use_us_english_locale", true); // If privacy resist fingerprint is set this is default
+
+// Mozilla Normandy (temporary studies, user surveys, hotfixes hence disabled)
+
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
 
 // Misc
 
@@ -412,26 +251,63 @@ user_pref("permissions.delegation.enabled", false);
 user_pref("privacy.window.name.update.enabled", true); // https://bugzilla.mozilla.org/show_bug.cgi?id=444222
 user_pref("browser.preferences.defaultPerformanceSettings.enabled", true); // Toggle for recommended performance settings
 
-// UI
+// Mixed Content
 
-user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-user_pref("browser.ssl_override_behavior", 1);
-user_pref("browser.xul.error_pages.expert_bad_cert", true);
-user_pref("security.insecure_connection_text.enabled", true);
+user_pref("security.mixed_content.block_active_content", true);
+user_pref("security.mixed_content.block_display_content", true);
+user_pref("security.mixed_content.block_object_subrequest", true);
 
-// Downloads
+// Network
 
-user_pref("browser.download.folderList", 2);
-user_pref("browser.download.useDownloadDir", false); // Ask where to save files
-user_pref("browser.download.manager.addToRecentDocs", false); // Don't add to recently opened files
-user_pref("browser.download.hide_plugins_without_extensions", false);
-user_pref("browser.download.forbid_open_with", true); // No 'open with' checkbox
+user_pref("network.dns.disableIPv6", true); // IPv6 increases fingerprinting apart from security issues
+user_pref("network.http.altsvc.enabled", false); // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
+user_pref("network.http.altsvc.oe", false); // See above
+user_pref("network.ftp.enabled", false); // By default set to fault https://winaero.com/firefox-drops-ftp-support/
+user_pref("network.proxy.socks_remote_dns", true); //proxy sever DNS lookup when using SOCKS
+user_pref("network.file.disable_unc_paths", true);
+user_pref("network.gio.supported-protocols", ""); // Disable gio as a potential proxy bypass vector
+user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials
+                                                          //dialogs
+// Network Prefetch
 
+user_pref("network.prefetch-next", false); // Turn off link prefetching https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
+user_pref("network.dns.disablePrefetch", true); // Turn off DNS prefetching
+user_pref("network.dns.disablePrefetchFromHTTPS", true); // Turn off DNS prefetching for https
+user_pref("network.predictor.enabled", false);
+user_pref("network.predictor.enable-prefetch", false);
+user_pref("network.http.speculative-parallel-limit", 0); // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
+
+// Newtab page activity, loading content from remote locations 
+
+user_pref("browser.newtabpage.enabled", false); // Display a blank page on nw tab currently controlled by MAC
+user_pref("browser.newtab.preload", false); // Don't preload content of new tab while in background
+
+// Primary password policy
+
+user_pref("security.ask_for_password", 2);
+user_pref("security.password_lifetime", 5);
+
+// Safe Browsing and Malware/Phishing
+
+user_pref("browser.safebrowsing.downloads.enabled", false); // Sends file name, hash, size to Google, turn off local See  Google Safe Browsing APIv4
+user_pref("browser.safebrowsing.downloads.remote.enabled", false); // Sends file name, hash, size to Google, turn off remote
+user_pref("browser.safebrowsing.downloads.remote.url", "");
+user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+user_pref("browser.safebrowsing.allowOverride", false); // https://bugzilla.mozilla.org/1226490
 
 // Security
 
 user_pref("security.csp.enable", true);
 user_pref("security.dialog_enable_delay", 700); // Delay to allow clicking save,open; in ms prevents race conditions
+
+// Session Restore
+
+user_pref("browser.sessionstore.max_tabs_undo", 0);
+user_pref("browser.sessionstore.privacy_level", 2);
+user_pref("browser.sessionstore.resume_from_crash", false);
+user_pref("browser.sessionstore.interval", 30000);
+user_pref("toolkit.winRegisterApplicationRestart", false);
 
 // Shutdown Behaviour
 
@@ -456,19 +332,128 @@ user_pref("privacy.clearOnShutdown.openWindows", true);
 user_pref("privacy.cpd.openWindows", true);
 user_pref("privacy.sanitize.timeSpan", 0);
 
+// SSL/TLS deviations from defaults can be used in server side fingerprinting
 
-// First Party Isolation
+user_pref("security.ssl.require_safe_negotiation", true);
+user_pref("security.tls.version.enable-deprecated", false);
+user_pref("security.ssl.disable_session_identifiers", true);
+user_pref("security.ssl.errorReporting.automatic", false);
+user_pref("security.ssl.errorReporting.enabled", false);
+user_pref("security.ssl.errorReporting.url", "");
+user_pref("security.tls.enable_0rtt_data", false);
+user_pref("security.ssl.enable_false_start", false);
+user_pref("security.ssl.enable_ocsp_stapling", true);
+user_pref("security.OCSP.enabled", 1);
+user_pref("security.OCSP.require", true);
 
-user_pref("privacy.firstparty.isolate", true);
-user_pref("privacy.resistFingerprinting", true);
-user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
-user_pref("privacy.resistFingerprinting.letterboxing", true);
-user_pref("browser.startup.blankWindow", false);
-user_pref("ui.prefersReducedMotion", 1);
-user_pref("privacy.firstparty.isolate.use_site", true); // Experimental https://bugzilla.mozilla.org/show_bug.cgi?id=1637516
+// Startup page, 0 is blank 
 
+user_pref("browser.startup.page", 0);
+user_pref("browser.startup.homepage", "about:blank");
 
-// (*3) Webrender
+// Telemetry and Reporting (Disables various telemetry and reporting)
+
+user_pref("toolkit.telemetry.unified", false); // Master switch if set to true below are not used by FF
+user_pref("toolkit.telemetry.enabled", false); // Master switch if set to true below are not used by FF
+user_pref("toolkit.telemetry.server", "data:,"); // The server telemetry pings are sent to; set to blank
+user_pref("toolkit.telemetry.archive.enabled", false); // Allow pings to be archived locally
+user_pref("toolkit.telemetry.newProfilePing.enabled", false); // Don't send a new profile ping
+user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false); // // Don't send shutdown ping to Mozilla for first session
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); // Don't send shutdown ping to Mozilla from second session
+user_pref("toolkit.telemetry.updatePing.enabled", false); // Don't send a update ping
+user_pref("toolkit.telemetry.bhrPing.enabled", false); // Reports background hangs
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.coverage.opt-out", true); // https://www.ghacks.net/2018/09/21/mozilla-wants-to-estimate-firefoxs-telemetry-off-population/
+user_pref("toolkit.coverage.opt-out", true);
+user_pref("toolkit.coverage.endpoint.base", "");
+user_pref("datareporting.healthreport.uploadEnabled", false); // Disable FF data reporting
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("app.shield.optoutstudies.enabled", false); // Opt-out of FF studies
+user_pref("browser.discovery.enabled", false);
+user_pref("breakpad.reportURL", ""); // Disables crash reporting
+user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash reporting
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
+user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button https://github.com/webcompat/webcompat-reporter-extensions
+                                                           
+// Tor
+
+user_pref("network.http.referer.hideOnionSource", true);                                                           
+                                                           
+// Turn off pocket/snippets telemetry on New Tab page
+
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.pinned", "");
+
+// uBO blocks pings by default
+
+user_pref("browser.send_pings", false);
+user_pref("browser.send_pings.require_same_host", true);
+
+// UI
+
+user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+user_pref("browser.ssl_override_behavior", 1);
+user_pref("browser.xul.error_pages.expert_bad_cert", true);
+user_pref("security.insecure_connection_text.enabled", true);
+
+// URL and Search bar  behaviour
+
+user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; disable it
+				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
+user_pref("browser.fixup.alternate.enabled", false);
+user_pref("browser.urlbar.trimURLs", false);
+user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.speculativeConnect.enabled", false);
+user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.bookmark", false);
+user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("places.history.enabled", false);
+user_pref("browser.urlbar.suggest.engines", false); // Disable tab-to-search
+
+// Web PKI https://blog.mozilla.org/security/2020/01/09/crlite-part-1-all-web-pki-revocations-compressed/
+
+user_pref("security.remote_settings.crlite_filters.enabled", true);
+user_pref("security.pki.crlite_mode", 2);
+
+// (*5) Webrender
 
 // user_pref("gfx.webrender.all", true); // Master switch
 // user_pref("gfx.webrender.software", true); // Use CPU
+
+// Web worker
+
+user_pref("dom.serviceWorkers.enabled", false);
+user_pref("dom.webnotifications.enabled", false);
+user_pref("dom.webnotifications.serviceworker.enabled", false);
+user_pref("dom.push.enabled", false);
+user_pref("dom.push.userAgentID", "");
+
+// Window or NewTab
+
+user_pref("dom.disable_window_move_resize", true);
+user_pref("browser.link.open_newwindow", 3);
+user_pref("browser.link.open_newwindow.restriction", 0);
+user_pref("full-screen-api.enabled", false);
+user_pref("dom.disable_open_during_load", true);
+user_pref("dom.popup_allowed_events", "click dblclick");
+user_pref("browser.link.open_newwindow.restriction", 0); // Open links in Tabs instead of a new window
