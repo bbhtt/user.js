@@ -174,6 +174,7 @@ user_pref("extensions.formautofill.heuristics.enabled", false);
 user_pref("signon.autofillForms", false);
 user_pref("browser.formfill.enable", false);
 user_pref("signon.formlessCapture.enabled", false);
+user_pref("signon.rememberSignons", false); // Toggle to remember sign-on
 
 // Network Prefetch
 
@@ -340,6 +341,8 @@ user_pref("permissions.default.camera", 2);
 user_pref("permissions.default.microphone", 2);
 user_pref("media.autoplay.default", 5);
 user_pref("media.autoplay.blocking_policy", 2);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false); // Toggle for PiP mode
+user_pref("media.hardwaremediakeys.enabled", false); // Toggle for hardware media controls
 
 // Window or NewTab
 
@@ -406,6 +409,7 @@ user_pref("pdfjs.disabled", false);
 user_pref("browser.display.use_system_colors", false);
 user_pref("permissions.delegation.enabled", false);
 user_pref("privacy.window.name.update.enabled", true); // https://bugzilla.mozilla.org/show_bug.cgi?id=444222
+user_pref("browser.preferences.defaultPerformanceSettings.enabled", true); // Toggle for recommended performance settings
 
 // UI
 
