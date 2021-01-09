@@ -5,7 +5,7 @@
 // (*1) Set the region code below
 // (*2) Choose geolocation to block per OS, Linux is enabled by default
 // (*3) Set check for default browser
-// (*4) Use Chameleon extension in conjunction
+// (*4) Sites may break; for flexibility use an addon
 // (*5) Enable WebRender
 
 // Autofill  (Disables various autofills)
@@ -116,7 +116,8 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("dom.allow_cut_copy", false);
 user_pref("dom.disable_beforeunload", true);
 user_pref("dom.vibrator.enabled", false);
-user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can access set local storage whne opened
+user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can
+access set local storage when opened
 
 // Downloads
 
@@ -202,9 +203,15 @@ user_pref("media.media-capabilities.enabled", false);
 user_pref("dom.vr.enabled", false); // Disable VR
 user_pref("permissions.default.xr", 2); // VR permissions set to block
 
-// Header/Referer
+// Header/Referer (*4)
 
- (*4) // Currently controled by Chameleon
+user_pref("network.http.sendRefererHeader", 0); // Never send a referer on click
+user_pref("network.http.referer.trimmingPolicy", 2); // Only send the origin
+user_pref("network.http.referer.XOriginPolicy", 2); // Send referer only on same origin
+user_pref("network.http.referer.XOriginTrimmingPolicy", 2); // Only send origin
+user_pref("network.http.referer.defaultPolicy", 1); // Default referer policy same origin
+user_pref("network.http.referer.defaultPolicy.pbmode", 1); // For private browsing mode
+user_pref("network.http.referer.hideOnionSource", true); // Hide referer on TOR
 
 // HTTPS only mode
 
@@ -375,11 +382,11 @@ user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash re
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
 user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button https://github.com/webcompat/webcompat-reporter-extensions
-                                                           
+
 // Tor
 
-user_pref("network.http.referer.hideOnionSource", true);                                                           
-                                                           
+user_pref("network.http.referer.hideOnionSource", true);
+
 // Turn off pocket/snippets telemetry on New Tab page
 
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
