@@ -142,6 +142,7 @@ user_pref("extensions.systemAddon.update.url", "");
 user_pref("browser.ping-centre.telemetry", false);
 user_pref("plugin.state.flash", 0);
 user_pref("media.gmp-provider.enabled", false);
+user_pref("extensions.postDownloadThirdPartyPrompt", false); // Disable bypassing 3rd party extension install prompts
 
 // Favicon
 
