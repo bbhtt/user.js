@@ -5,7 +5,7 @@
 // (*1) Set the region code below
 // (*2) Choose geolocation to block per OS, Linux is enabled by default
 // (*3) Set check for default browser
-// (*4) Sites may break; for flexibility use an addon
+// (*4) Sites may break; for flexibility use an addon and comment the whole section
 // (*5) Enable WebRender
 
 // Autofill  (Disables various autofills)
@@ -273,8 +273,8 @@ user_pref("network.ftp.enabled", false); // By default set to fault https://wina
 user_pref("network.proxy.socks_remote_dns", true); //proxy sever DNS lookup when using SOCKS
 user_pref("network.file.disable_unc_paths", true);
 user_pref("network.gio.supported-protocols", ""); // Disable gio as a potential proxy bypass vector
-user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials
-                                                          //dialogs
+user_pref("network.auth.subresource-http-auth-allow", 1); // 1=Don't allow cross-origin sub-resources to open HTTP authentication credentials dialogs
+
 // Network Prefetch
 
 user_pref("network.prefetch-next", false); // Turn off link prefetching https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
@@ -422,8 +422,7 @@ user_pref("security.insecure_connection_text.enabled", true);
 
 // URL and Search bar  behaviour
 
-user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; disable it
-				     // https://bugzilla.mozilla.org/show_bug.cgi?id=100412
+user_pref("keyword.enabled", false); // Input in location bar automatically resolved by keyword service; https://bugzilla.mozilla.org/show_bug.cgi?id=100412
 user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("browser.search.suggest.enabled", false);
