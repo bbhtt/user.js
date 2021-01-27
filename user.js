@@ -247,7 +247,6 @@ user_pref("browser.uitour.url", "");
 user_pref("devtools.chrome.enabled", false);
 user_pref("devtools.debugger.remote-enabled", false);
 user_pref("middlemouse.contentLoadURL", false);
-user_pref("network.http.redirection-limit", 7);
 user_pref("permissions.default.shortcuts", 2);
 user_pref("permissions.manager.defaultsUrl", "");
 user_pref("webchannel.allowObject.urlWhitelist", "");
