@@ -459,5 +459,5 @@ user_pref("browser.link.open_newwindow", 3);
 user_pref("browser.link.open_newwindow.restriction", 0);
 user_pref("full-screen-api.enabled", false);
 user_pref("dom.disable_open_during_load", true);
-user_pref("dom.popup_allowed_events", "click dblclick");
+user_pref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 user_pref("browser.link.open_newwindow.restriction", 0); // Open links in Tabs instead of a new window
