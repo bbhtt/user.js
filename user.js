@@ -33,7 +33,8 @@ user_pref("browser.cache.memory.capacity", 0);
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
 user_pref("media.memory_cache_max_size", 65536);
 user_pref("browser.cache.offline.storage.enable", false); // Enforce no offline cache
-user_pref("network.cookie.cookieBehavior", 1);
+user_pref("network.cookie.cookieBehavior", 1);        // Default cookie behaviour controlled by ETP mode; 5=dFPI;4=Block
+                                                     // cross-site (default);3=Block unvisited;2=Block all;1=Block all third party;0=allow all
 user_pref("browser.contentblocking.category", "custom");
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true);
@@ -209,7 +210,6 @@ user_pref("network.http.referer.XOriginPolicy", 2); // Send referer only on same
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2); // Only send origin
 user_pref("network.http.referer.defaultPolicy", 1); // Default referer policy same origin
 user_pref("network.http.referer.defaultPolicy.pbmode", 1); // For private browsing mode
-user_pref("network.http.referer.hideOnionSource", true); // Hide referer on TOR
 
 // HTTPS only mode
 
@@ -379,10 +379,6 @@ user_pref("browser.tabs.crashReporting.sendReport", false); // Disables crash re
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // Disables crash reporting
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // Don't send backlogged crash reports
 user_pref("extensions.webcompat-reporter.enabled", false); // Internal extension to report site issues; disables button https://github.com/webcompat/webcompat-reporter-extensions
-
-// Tor
-
-user_pref("network.http.referer.hideOnionSource", true);
 
 // Turn off pocket/snippets telemetry on New Tab page
 
