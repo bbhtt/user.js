@@ -10,7 +10,7 @@
 
 // Autofill  (Disables various autofills)
 
-user_pref("webgl.disable-fail-if-major-performance-caveat", true)user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.available", false);
 user_pref("extensions.formautofill.available", "off");
 user_pref("extensions.formautofill.creditCards.enabled", false);
@@ -181,7 +181,7 @@ user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 user_pref("webgl.disabled", true);
 user_pref("webgl.enable-webgl2", false);
 user_pref("webgl.min_capability_mode", true);
-media.gmp-widevinecdm.visible"user_pref("webgl.disable-fail-if-major-performance-caveat", true);
+user_pref("webgl.disable-fail-if-major-performance-caveat", true);
 user_pref("media.getusermedia.screensharing.enabled", false);
 user_pref("media.getusermedia.browser.enabled", false);
 user_pref("media.getusermedia.audiocapture.enabled", false);
