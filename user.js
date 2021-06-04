@@ -117,6 +117,8 @@ user_pref("dom.allow_cut_copy", false);
 user_pref("dom.disable_beforeunload", true);
 user_pref("dom.vibrator.enabled", false);
 user_pref("dom.storage.next_gen", true);  //Next Generation local storage, new tabs can access set local storage when opened
+user_pref("dom.maxHardwareConcurrency", 2); // Spoof number of core available https://html.spec.whatwg.org/multipage/workers.html#navigator.hardwareconcurrency
+user_pref("dom.enable_performance", false);
 
 // Downloads
 
