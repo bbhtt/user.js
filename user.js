@@ -346,7 +346,6 @@ user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.url", "");
 user_pref("security.tls.enable_0rtt_data", false);
 user_pref("security.ssl.enable_false_start", false);
-user_pref("security.ssl.enable_ocsp_stapling", true);
 user_pref("security.OCSP.enabled", 1);
 user_pref("security.OCSP.require", true);
 
