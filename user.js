@@ -247,6 +247,7 @@ user_pref("permissions.manager.defaultsUrl", "");
 user_pref("webchannel.allowObject.urlWhitelist", "");
 user_pref("network.IDN_show_punycode", true);
 user_pref("pdfjs.disabled", false);
+user_pref("pdfjs.enableScripting", false); // Disable pdf.js scripting https://www.mozilla.org/en-US/firefox/88.0/releasenotes/
 user_pref("browser.display.use_system_colors", false);
 user_pref("permissions.delegation.enabled", false);
 user_pref("privacy.window.name.update.enabled", true); // https://bugzilla.mozilla.org/show_bug.cgi?id=444222
