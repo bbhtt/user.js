@@ -132,14 +132,11 @@ user_pref("extensions.update.enabled", false); // Don't auto check for extension
 user_pref("extensions.update.autoUpdateDefault", false); // Don't auto-update extensions
 user_pref("extensions.systemAddon.update.enabled", false);
 user_pref("extensions.getAddons.cache.enabled", false); // Disable extension metadata sends daily ping to Mozilla
-user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false); // Stop flash crash reporting
-user_pref("dom.ipc.plugins.reportCrashURL", false);  // Stop sending url when crash reporting
 user_pref("extensions.getAddons.showPane", false); // Don't display recommended addons
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); // Don't display recommended addons
 user_pref("extensions.blocklist.enabled", true); // Mozilla maintaines a remote blocklist of malicious addons; setting to true prevents installing any
 user_pref("extensions.systemAddon.update.url", "");
 user_pref("browser.ping-centre.telemetry", false);
-user_pref("plugin.state.flash", 0);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("extensions.postDownloadThirdPartyPrompt", false); // Disable bypassing 3rd party extension install prompts
 
